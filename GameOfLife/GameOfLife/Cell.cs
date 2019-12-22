@@ -29,5 +29,6 @@ namespace GameOfLife
         {
             Alive = true;
         }
+        
     }
 }
