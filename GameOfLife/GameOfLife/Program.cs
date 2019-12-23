@@ -10,7 +10,7 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
-            GameOfLife game = new GameOfLife(5);
+            GameOfLife game = new GameOfLife(10);
             while (game.IsStillAlive())
             {
                 game.NextRound();

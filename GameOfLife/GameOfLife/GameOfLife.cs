@@ -61,6 +61,7 @@ namespace GameOfLife
         public void PrintMatrix()
         {
             Console.CursorVisible = false;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
 
             for (int i = 1; i < matrix.GetLength(0) - 2; i++)
