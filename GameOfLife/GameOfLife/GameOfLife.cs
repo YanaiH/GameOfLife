@@ -19,7 +19,7 @@ namespace GameOfLife
             {
                 for (int j = 1; j < matrixSize; j++)
                 {
-                    int temp = rnd.Next(0, 2);
+                    int temp = rnd.Next(0, 2); 
                     if (temp == 0)
                     {
                         matrix[i, j] = new Cell(false);
@@ -64,6 +64,7 @@ namespace GameOfLife
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
 
             for (int i = 1; i < matrix.GetLength(0) - 2; i++)
             {
@@ -73,7 +74,7 @@ namespace GameOfLife
                     if (matrix[i, j].IsAlive())
                     {
                         Console.BackgroundColor = ConsoleColor.White;
-                        Console.Write(" ");
+                        Console.Write("*");
                     }
                 }
             }
@@ -86,7 +87,7 @@ namespace GameOfLife
             {
                 for (int j = column - 1; j <= column + 1; j++)
                 {
-                    if ((i != row || j != column) && matrix[i, j] != null)
+                    if (!(i == row && j == column) && matrix[i, j] != null)
                     {
                         if (matrix[i, j].IsAlive())
                         {
