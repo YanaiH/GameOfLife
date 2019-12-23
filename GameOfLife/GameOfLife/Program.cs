@@ -10,12 +10,13 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
-            GameOfLife game = new GameOfLife(20);
-            for (int i = 0; i < 30; i++)
+            GameOfLife game = new GameOfLife(5);
+            while (game.IsStillAlive())
             {
                 game.NextRound();
-                System.Threading.Thread.Sleep(500);
+                System.Threading.Thread.Sleep(900);
             }
+            Console.WriteLine("Game died after {0} rounds.",game.GetNumOfRoundsPlayed());
             Console.ReadKey();
 
         }

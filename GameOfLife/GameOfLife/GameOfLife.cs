@@ -31,6 +31,7 @@ namespace GameOfLife
                 }
             }
             numOfRoundsPlayed = 0;
+            PrintMatrix();
         }
 
 
@@ -54,6 +55,7 @@ namespace GameOfLife
                 }
             }
             PrintMatrix();
+            numOfRoundsPlayed++;
         }
 
         public void PrintMatrix()
@@ -96,6 +98,27 @@ namespace GameOfLife
                 }
             }
             return count;
+        }
+
+        public bool IsStillAlive()
+        {
+            bool alive = false;
+            for (int i = 1; i < matrix.GetLength(0) - 2; i++)
+            {
+                for (int j = 1; j < matrix.GetLength(1) - 2; j++)
+                {
+                    if (matrix[i,j].IsAlive())
+                    {
+                        alive = true;
+                    }
+                }
+            }
+            return alive;
+        }
+
+        public int GetNumOfRoundsPlayed()
+        {
+            return numOfRoundsPlayed;
         }
     }
 }
