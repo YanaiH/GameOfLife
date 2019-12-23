@@ -63,6 +63,7 @@ namespace GameOfLife
             Console.CursorVisible = false;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
+            Console.BackgroundColor = ConsoleColor.White;
 
             for (int i = 1; i < matrix.GetLength(0) - 2; i++)
             {
@@ -72,12 +73,8 @@ namespace GameOfLife
                     if (matrix[i, j].IsAlive())
                     {
                         Console.BackgroundColor = ConsoleColor.White;
+                        Console.Write(" ");
                     }
-                    else
-                    {
-                        Console.BackgroundColor = ConsoleColor.Black;
-                    }
-                    Console.Write(" ");
                 }
             }
         }
